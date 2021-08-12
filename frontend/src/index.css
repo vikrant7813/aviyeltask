@@ -238,6 +238,7 @@ code {
 .invoice-card .invoice-card-body table td{
   padding: 20px 30px;
   font-size: 13px;
+  border-bottom: 1px solid #f6f6f6;
 }
 
 .invoice-card .invoice-card-body .footer-table{
@@ -247,6 +248,7 @@ code {
 
 .invoice-card .invoice-card-body .footer-table td{
   padding: 10px 30px;
+  border-bottom: none;
 }
 
 .invoice-card .invoice-card-body .footer-table .grand-total-row td{
@@ -418,6 +420,7 @@ code {
 .add-invoice-table table td{
   padding: 20px 30px;
   font-size: 13px;
+  border-bottom: 1px solid #f6f6f6;
 }
 
 .add-item-form .item-name{
@@ -549,6 +552,6 @@ table td.quantity, table td.price{
   color: #2f3740;
 }
 
-.hidden{ 
+.hidden{
   display: none;
 }

@@ -8,11 +8,11 @@ import invoiceService from "../services/Invoice.js";
 export default function InvoiceLayout() {
     const [selectedInvoice, setSelectedInvoice] = useState(null);
     const [isAddInvoiceFormVisible, setAddInvoiceFormVisible] = useState(false);
-    const [invoices, setInvoices] = useState([]);
+    const [invoices, setInvoices] = useState(null);
     const [invoiceCount, setInvoiceCount] = useState(0);
 
     useEffect(() => {
-        if (invoices.length === 0) {
+        if (invoices === null) {
             fetchInvoices();
         }
     }, [invoices]);
@@ -40,7 +40,7 @@ export default function InvoiceLayout() {
     return (
     <div>
         <InvoiceHeader showAddInvoiceForm={showAddInvoiceForm} />
-        <InvoiceList setSelectedInvoice={setSelectedInvoice} selectedInvoice={selectedInvoice} invoices={invoices} invoiceCount={invoiceCount} />
+        <InvoiceList setSelectedInvoice={setSelectedInvoice} selectedInvoice={selectedInvoice} invoices={invoices !== null ? invoices : []} invoiceCount={invoiceCount} />
         <InvoiceView selectedInvoice={selectedInvoice} />
         {
             isAddInvoiceFormVisible 

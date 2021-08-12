@@ -48,16 +48,16 @@ export default function InvoiceForm(props) {
     const validateItemEntry = (values) => {
         const errors = {};
         if (!values.itemName) {
-            errors.itemName = 'Required';
+            errors.itemName = '';
         }
         if (!values.quantity) {
-            errors.quantity = 'Required'
+            errors.quantity = ''
         }
         else if(!isNumber(values.quantity)){
             errors.quantity = 'Invalid'
         }
         if (!values.price) {
-            errors.price = 'Required'
+            errors.price = ''
         }
         else if(!isNumber(values.price)){
             errors.price = 'Invalid'
