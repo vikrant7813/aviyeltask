@@ -1,4 +1,4 @@
-# Inoice Application
+# Invoice Application
 
 The application's frontend is based on ReactJS and backend is on Django. 
 
