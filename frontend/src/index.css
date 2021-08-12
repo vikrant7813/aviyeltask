@@ -1,0 +1,554 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+p{
+  margin: 0 0 10px 0;
+}
+
+input, textarea{
+  padding: 12px 18px;
+  border: 1px solid #d0d4dd;
+  margin-top: 5px;
+  border-radius: 4px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.header{
+  background: #336399;
+  width: 100%;
+  padding: 22px;
+  color: white;
+  font-size: 18px;
+}
+
+.header-icon{
+  background: #ff64a4;
+  border-radius: 50%;
+  position: absolute;
+  right: 50px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.header-icon:hover{
+  /* Implement hover */
+}
+
+.header-icon > img{
+  height: 20px;
+  padding: 20px;
+}
+
+.sidebar{
+  width: 350px;
+  height: calc(100vh - 65px);
+  float: left;
+  background: #2f3740;
+}
+
+.invoice-list-count{
+  color: #9ba6b7;
+  border-bottom: 1px solid #3d4550;
+  padding: 10px 30px;
+  font-size: 13px;
+}
+
+.invoice-list-item{
+  position: relative;
+  border-bottom: 1px solid #3d4550;
+  color: #9ba6b7;
+  padding: 20px 30px;
+  cursor: pointer;
+}
+
+.invoice-list-item-selected{
+  color: #fbfcfc;
+  background-color: #404b57;
+}
+
+.invoice-list-item:hover{
+  background-color: #404b57;
+}
+
+.invoice-list-item .invoice-list-item-id{
+  margin-bottom: 10px;
+}
+
+.invoice-list-item .invoice-list-item-count{
+  font-size: 13px;
+  margin-bottom: 5px
+}
+
+.invoice-list-item .invoice-list-item-customer-name{
+  font-size: 12px;
+  color: #66a6ff;
+  width: 50%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.invoice-list-item .invoice-list-item-customer-name-unknown{
+  color: #9ba6b7;
+}
+
+.invoice-list-item .invoice-list-item-timestamp{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 12px;
+  color: #747f8c;
+}
+
+.invoice-list-item .invoice-list-item-total{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.invoice-wrapper{
+  background: #f2f3f5;
+  width: calc(100% - 350px);
+  padding: 35px 30px;
+  height: calc(100vh - 65px);
+  float: left;
+  overflow: auto;
+}
+
+.invoice-header{
+  color: #b4bcc6;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+.invoice-card{
+  background: white;
+  padding: 30px;
+  margin-top: 30px;
+  border-radius: 2px;
+  box-shadow: 0px 2px 9px 3px #ddd;
+}
+
+.invoice-card .invoice-card-header{
+  display: inline-block;
+  width: 100%;
+}
+
+.invoice-card .invoice-card-details{
+  width: 50%;
+  float: left;
+}
+
+.invoice-card .invoice-card-details .invoice-title{
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.invoice-card .invoice-card-details .invoice-id{
+  font-weight: 300;
+}
+
+.invoice-card .invoice-card-details .invoice-timestamp{
+  font-size: 12px;
+  color: #878c95;
+}
+
+.invoice-card-customer-details{
+  width: calc(50% - 150px);
+  float: left;
+  text-align: right;
+}
+
+.invoice-card-customer-details .customer-details-title{
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-bottom: 15px;
+  color: #a2a6a9;
+}
+
+.invoice-card-customer-details .customer-details-name{
+  font-size: 15px;
+}
+
+.invoice-card-customer-details .customer-details-email{
+  font-size: 13px;
+  color: #737982
+}
+
+.invoice-card .invoice-card-print-div{
+  text-align: right;
+}
+
+.invoice-card .invoice-card-print-div .invoice-card-print-button{
+  padding: 10px 20px;
+  background: none;
+  color: #66a6ff;
+  text-transform: uppercase;
+  border: 1px solid #66a6ff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.invoice-card .invoice-card-print-div .invoice-card-print-button:hover{
+  color: #2868c1;
+  border-color: #2868c1;
+}
+
+.invoice-card .invoice-card-print-div .invoice-card-print-button > img{
+  margin-left: 10px;
+}
+
+.invoice-card .invoice-card-print-div .invoice-card-print-button > span{
+  position: relative;
+  top: -5px;
+}
+
+.invoice-card .invoice-card-body table{
+  width: 100%;
+  margin-top: 30px;
+}
+
+.invoice-card .invoice-card-body table th{
+  text-transform: uppercase;
+  font-weight: 300;
+  padding: 20px 30px;
+  font-size: 13px;
+  color: #b9bfc9;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.invoice-card .invoice-card-body table td{
+  padding: 20px 30px;
+  font-size: 13px;
+}
+
+.invoice-card .invoice-card-body .footer-table{
+  width: 40%;
+  margin-left: 60%;
+}
+
+.invoice-card .invoice-card-body .footer-table td{
+  padding: 10px 30px;
+}
+
+.invoice-card .invoice-card-body .footer-table .grand-total-row td{
+  font-size: 15px;
+  font-weight: 600;
+  padding: 20px 30px;
+}
+
+/* Add Invoice Model CSS */
+
+.add-invoice-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  outline: none;
+  overflow: auto;
+}
+
+.add-invoice-modal{
+  padding: 30px;
+  background: white;
+  width: 60%;
+  margin: 100px auto;
+  outline: none;
+  border-radius: 4px;
+  box-shadow: 0px 2px 9px 3px #0000002e;
+  position: relative;
+}
+
+.add-invoice-modal .add-invoice-title{
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.add-invoice-modal .add-invoice-subtitle{
+  font-size: 13px;
+  color: #878c92;
+  font-weight: 600;
+  margin-left: 100px;
+  text-transform: uppercase;
+}
+
+.add-invoice-modal .add-invoice-close-btn{
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  cursor: pointer;
+}
+
+.add-invoice-modal .add-invoice-skip-button{
+  padding: 15px 20px;
+  background: #f3f4f6;
+  color: #67a6ff;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  float: right; 
+}
+
+.add-invoice-modal .add-invoice-skip-button img{
+  margin-left: 10px;
+  position: relative;
+  top: 1px;
+}
+
+.add-invoice-modal .add-invoice-header{
+  margin-top: 20px;
+  position: relative;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+  display: inline-block;
+  width: 100%;
+}
+
+.add-invoice-modal .add-invoice-form-title{
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 500;
+  position: relative;
+  top: 10px;
+  width: 50%;
+  float: left;
+}
+
+.add-invoice-modal .add-invoice-customer-form-row{
+  display: inline-block;
+  width: 100%;
+}
+
+.add-invoice-modal .add-invoice-customer-form-row label, input, textarea{
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.add-invoice-modal .add-invoice-customer-form-row label{
+  margin-top: 30px;
+  display: inline-block;
+  font-size: 13px;
+}
+
+.add-invoice-modal .add-invoice-customer-form-left-column{
+  width: 55%;
+  float: left;
+}
+
+.add-invoice-modal .add-invoice-customer-form-right-column{
+  width: calc(45% - 30px);
+  margin-left: 30px;
+  float: left;
+}
+
+.add-invoice-modal .add-invoice-footer{
+  background: #edf0f2;
+  margin: 80px -30px -30px -30px;
+  padding: 25px 30px;
+  text-align: right;
+}
+
+.add-invoice-modal .add-invoice-footer .footer-btn{
+  background: #66a6ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+  width: 150px;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+.add-invoice-modal .error-message{
+  font-size: 12px;
+  color: rgba(255, 100, 100, 0.719);
+  margin-top: 3px;
+}
+
+.add-invoice-modal .invoice-card-customer-details{
+  width: calc(50% - 70px);
+  margin-top: -18px;
+}
+
+.add-invoice-modal .add-invoice-edit-button{
+  background: none;
+  cursor: pointer;
+  border: none;
+  margin-left: 10px;
+  position: relative;
+  top: -6px;
+}
+
+.add-invoice-table table{
+  width: 100%;
+}
+
+.add-invoice-table table th{
+  text-transform: uppercase;
+  font-weight: 300;
+  padding: 20px 30px;
+  font-size: 13px;
+  color: #b9bfc9;
+  border-bottom: 1px solid #eee;
+}
+
+.add-invoice-table table td{
+  padding: 20px 30px;
+  font-size: 13px;
+}
+
+.add-item-form .item-name{
+  width: 50%;
+  padding-right: 20px;
+  float: left;
+}
+
+.add-item-form .quantity{
+  width: 20%;
+  padding-right: 20px;
+  float: left;
+}
+
+.add-item-form .price{
+  width: calc(30% - 50px);
+  padding-right: 20px;
+  float: left;
+}
+
+.add-item-form .enter-btn{
+  width: 50px;
+  float: left;
+}
+
+.add-item-form .enter-btn button{
+  background: none;
+  padding: 11px;
+  border: 1px solid #66a6ff;
+  margin-top: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+table td .item-name{
+  width: 50%;
+}
+
+table td.quantity, table td.price{
+  width: 25%;
+}
+
+.add-invoice-sub-total-block{
+  margin-top: 80px;
+  margin-bottom: -60px;
+  display: inline-block;
+  width: 100%;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+.add-invoice-sub-total-block .add-invoice-tax-discount{
+  width: 400px;
+  float: left;
+}
+
+.add-invoice-sub-total-block .add-invoice-sub-total{
+  width: calc(100% - 400px);
+  float: left;
+  text-align: right;
+  padding-right: 30px;
+  padding-top: 16px;
+}
+
+.add-invoice-sub-total-block .add-invoice-sub-total span{
+  margin-left: 100px;
+}
+
+.suffix-button{
+  position: relative;
+  width: 150px;
+  margin-right: 20px;
+  float: left;
+}
+
+.suffix-button span{
+  position: absolute;
+  right: 15px;
+  top: 16px;
+}
+
+.suffix-button input{
+  padding-right: 40px;
+}
+
+.invoice-list{
+  height: calc(100vh - 100px);
+  overflow: auto;
+}
+
+
+.add-invoice-footer .tax-discount-block p{
+  font-weight: 600;
+  color: #747d8d;
+}
+
+.add-invoice-footer .tax-discount-block span{
+  font-weight: 600;
+  color: #b3bbc5;
+}
+
+
+.add-invoice-footer .tax-discount-block{
+  width: 150px;
+  float: left;
+  margin-right: 20px;
+  text-align: left;
+  font-size: 13px;
+  padding-left: 20px;
+}
+
+.add-invoice-footer .total-block{
+  width: 150px;
+  float: left;
+  margin-left: 100px;
+  text-align: left;
+  position: absolute;
+  right: 250px;
+}
+
+.add-invoice-footer .total-block p{
+  font-weight: 600;
+  color: #747d8d;
+  margin-bottom: 6px;
+}
+
+.add-invoice-footer .total-block span{
+  font-weight: 600;
+  color: #2f3740;
+}
+
+.hidden{ 
+  display: none;
+}
