@@ -7,7 +7,7 @@ The application's frontend is based on ReactJS and backend is on Django.
 The backend code is in `backend` directory. To run the project:
 
 ```bash
-cd api
+cd backend
 python3 -m virtualenv myenv         # Create Python3 virtual environment
 source myenv/bin/activate           # Activate virtual environment
 
